@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>mobile marker AR</title>
-  <script src='vendor/three.js/build/three.min.js'></script>
-  <script src="vendor/three.js/examples/js/libs/stats.min.js"></script>
+  <script src='three.min.js'></script>
+  <script src="stats.js"></script>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <!-- <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
@@ -21,15 +21,15 @@
 </head>
 <body>
 
-  <a-scene embedded arjs>
+  <!-- <a-scene embedded arjs>
 
     <a-text value="Hello, World!"></a-text>
-    <!-- <a-image src="another-image.png"></a-image> -->
+     <a-image src="another-image.png"></a-image>
     <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-    <!-- define a camera which will move according to the marker position -->
+     define a camera which will move according to the marker position
     <a-marker-camera type='pattern' patternUrl='image/pattern-marker.patt'></a-marker-camera>
 
-  </a-scene>
+  </a-scene> -->
 
 </body>
 </html>
