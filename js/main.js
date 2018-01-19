@@ -16,7 +16,7 @@ const onRenderFcts= [];
 // init scene and camera
 const scene	= new THREE.Scene();
 
-// Create a camera
+// create a camera
 const camera = new THREE.Camera();
 scene.add(camera);
 
@@ -46,13 +46,11 @@ function onResize(){
     arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)
   }
 }
-////////////////////////////////////////////////////////////////////////////////
-//          initialize arToolkitContext
-////////////////////////////////////////////////////////////////////////////////
+
 
 // create atToolkitContext
 var arToolkitContext = new THREEx.ArToolkitContext({
-  cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+  cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../other/camera_para.dat',
   detectionMode: 'mono',
   maxDetectionRate: 30,
   canvasWidth: 80*3,
@@ -92,9 +90,9 @@ var smoothedControls = new THREEx.ArSmoothedControls(smoothedRoot, {
 onRenderFcts.push(function(delta){
   smoothedControls.update(markerRoot)
 })
-//////////////////////////////////////////////////////////////////////////////////
-//		add an object in the scene
-//////////////////////////////////////////////////////////////////////////////////
+
+
+//add an object in the scene
 var arWorldRoot = smoothedRoot
 // add a torus knot
 var geometry	= new THREE.CubeGeometry(1,1,1);
@@ -116,9 +114,8 @@ arWorldRoot.add( mesh );
 onRenderFcts.push(function(){
   mesh.rotation.x += 0.1
 })
-//////////////////////////////////////////////////////////////////////////////////
-//		render the whole thing on the page
-//////////////////////////////////////////////////////////////////////////////////
+
+//render the whole thing on the page
 var stats = new Stats();
 document.body.appendChild( stats.dom );
 // render the scene
