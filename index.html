@@ -138,13 +138,26 @@
 	// onRenderFcts.push(function(delta){
 	// 	mesh.rotation.x += Math.PI*delta
 	// })
-	var texture = new THREE.TextureLoader().load('image/subtlejohn.png');
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// const image = () => {
+		// var texture = new THREE.TextureLoader().load('image/subtlejohn.png');
+		// var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+		// var material = new THREE.MeshBasicMaterial( { map: texture } );
+		// var mesh = new THREE.Mesh( geometry, material );
+		// scene.add( mesh );
+  //
+	// 	if ( textureNeedsPowerOfTwo( texture ) && isPowerOfTwo( image ) === false ){
+  //
+	//     image = makePowerOfTwo( image );
+	// 	}
+	// }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+var map = new THREE.TextureLoader().load( "image/subtlejohn.png" );
+var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
+var sprite = new THREE.Sprite( material );
+scene.add( sprite );
 
-	var geometry = new THREE.BoxGeometry( 10, 10, 10 );
-	var material = new THREE.MeshBasicMaterial( { map: texture } );
-	var mesh = new THREE.Mesh( geometry, material );
-	mesh.position.y = 0.5;
-	scene.add( mesh );
+
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
