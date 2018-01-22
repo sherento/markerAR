@@ -105,6 +105,7 @@
 			// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
 			changeMatrixMode: 'cameraTransformMatrix'
 		})
+
 	// as we do changeMatrixMode: 'cameraTransformMatrix', start with invisible scene
 		scene.visible = false
 
@@ -117,17 +118,6 @@
 		var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
 		var sprite = new THREE.Sprite( material );
 		scene.add( sprite );
-
-		const makeSphere = () => {
-		  const sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
-
-		  sphere = new THREE.Mesh(sphereGeometry, material);
-		  sphere.position.x = 0;
-		  sphere.position.y = 0;
-		  sphere.position.z = 100;
-		  sphere.castShadow = true;
-		  scene.add(sphere);
-		};
 
 
 	//////////////////////////////////////////////////////////////////////////////////
